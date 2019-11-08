@@ -1,0 +1,27 @@
+{
+  "name": "@blitzy/scaler",
+  "version": "1.0.0",
+  "description": "Scale you page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imjohnlouie04/scaler.git"
+  },
+  "keywords": [
+    "vue",
+    "scale",
+    "plugin"
+  ],
+  "author": "John Louie Binas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imjohnlouie04/scaler/issues"
+  },
+  "dependencies": {
+    "vue": "^2.6.10"
+  },
+  "homepage": "https://github.com/imjohnlouie04/scaler#readme"
+}
