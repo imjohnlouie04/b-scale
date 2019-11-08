@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/imjohnlouie04/scaler.git"
+    "url": "git+https://github.com/imjohnlouie04/b-scale.git"
   },
   "keywords": [
     "vue",
@@ -16,12 +16,12 @@
     "plugin"
   ],
   "author": "John Louie Binas",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/imjohnlouie04/scaler/issues"
+    "url": "https://github.com/imjohnlouie04/b-scale.git/issues"
   },
   "dependencies": {
     "vue": "^2.6.10"
   },
-  "homepage": "https://github.com/imjohnlouie04/scaler#readme"
+  "homepage": "https://github.com/imjohnlouie04/b-scale#readme"
 }
