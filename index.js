@@ -1,4 +1,4 @@
-import VueScale from "@/VueScale.vue";
+import VueScale from "./VueScale";
 
 // Install function executed by Vue.use()
 function install(Vue, options) {
@@ -23,7 +23,7 @@ function install(Vue, options) {
   }
 }
 // Create module definition for Vue.use()
-const VueScale = {
+const windowScaler = {
   install
 };
 
@@ -38,8 +38,8 @@ if (typeof window !== "undefined") {
 }
 
 if (GlobalVue) {
-  GlobalVue.use(VueScale);
+  GlobalVue.use(windowScaler);
 }
 
 // To allow use as module (npm/webpack/etc.) export components
-export default VueScale;
+export default windowScaler;
