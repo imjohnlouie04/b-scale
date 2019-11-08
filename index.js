@@ -42,4 +42,4 @@ if (GlobalVue) {
 }
 
 // To allow use as module (npm/webpack/etc.) export components
-export default blitzy;
+export default VueScale;
