@@ -1,7 +1,7 @@
 {
   "name": "@blitzer/scaler",
   "version": "0.1.5",
-  "description": "Scale you page",
+  "description": "Scale your page in a faster way",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
