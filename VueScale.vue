@@ -1,5 +1,5 @@
 <template>
-  <div class="scalable__window" :style="[dynamicStyle]">
+  <div class="scalable__window" :style="[dynamicStyle, {'width': width+'px', 'height': changeHeight+'px'}]">
     <slot></slot>
   </div>
 </template>
@@ -18,8 +18,19 @@ export default {
   },
   data () {
     return {
-      initHeight: 0,
+      changeHeight: null,
       dynamicStyle: ""
+    }
+  },
+
+  computed: {
+    heightValue: { 
+      get () {
+        return this.height
+      },
+      set (newValue){
+        this.changeHeight = newValue
+      }
     }
   },
 
@@ -33,32 +44,30 @@ export default {
           pageWidth = null,
           pageHeight = null
 
-      if (window.innerHeight < 950) {
-        _s.initHeight = 950
+      if (window.innerHeight < _s.$props.height) {
+        _s.changeHeight = _s.$props.height
       } else {
-        _s.initHeight = window.innerHeight
+        _s.changeHeight = window.innerHeight
       }
 
       pageWidth = _s.$parent.$el.offsetWidth
       pageHeight = _s.$parent.$el.offsetHeight
 
       let computeScaleX = pageWidth / _s.$props.width
-      let computeScaleY = pageHeight / _s.$props.height
+      let computeScaleY = pageHeight / _s.changeHeight
 
       scaleX = computeScaleX
       scaleY = computeScaleY
       scale = (scaleX > scaleY) ? scaleY : scaleX;
 
       let getLeftPosition = Math.abs(Math.floor((( _s.$props.width * scale) - pageWidth)/2))
-      let getTopPosition = Math.abs(Math.floor(((_s.$props.height * scale) - pageHeight)/2))
+      let getTopPosition = Math.abs(Math.floor((( _s.changeHeight * scale) - pageHeight)/2))
       let scaleRound = Math.floor(scale * 1000) / 1000
       
       this.dynamicStyle = {
         'transform': 'translateZ(0) scale(' + (window.innerWidth < _s.$props.width || window.innerWidth > _s.$props.width ? scaleRound :  scaleRound.toFixed(1)) + ')',
         'left': getLeftPosition + 'px',
-        'top': getTopPosition + 'px',
-        'width': _s.$props.width + 'px',
-        'height': _s.$props.height + 'px'
+        'top': getTopPosition + 'px'
       }
     }
   },
@@ -73,11 +82,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss" scoped>
-.scalable__window {
-  position: absolute;
-  overflow: hidden;
-  backface-visibility: hidden;
-}
-</style>
