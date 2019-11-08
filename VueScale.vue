@@ -18,6 +18,7 @@ export default {
   },
   data () {
     return {
+      initHeight: 0,
       dynamicStyle: ""
     }
   },
@@ -33,9 +34,9 @@ export default {
           pageHeight = null
 
       if (window.innerHeight < 950) {
-        _s.$props.height = 950
+        _s.initHeight = 950
       } else {
-        _s.$props.height = window.innerHeight
+        _s.initHeight = window.innerHeight
       }
 
       pageWidth = _s.$parent.$el.offsetWidth
@@ -77,11 +78,6 @@ export default {
 .scalable__window {
   position: absolute;
   overflow: hidden;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  transform-origin: top left;
-  will-change: transform, top, left;
   backface-visibility: hidden;
 }
 </style>
