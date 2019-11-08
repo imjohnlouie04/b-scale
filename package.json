@@ -1,6 +1,6 @@
 {
-  "name": "@blitzy/scaler",
-  "version": "1.0.0",
+  "name": "@blitzer/scaler",
+  "version": "0.1.1",
   "description": "Scale you page",
   "main": "index.js",
   "scripts": {
