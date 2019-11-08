@@ -1,6 +1,6 @@
 {
   "name": "@blitzer/scaler",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Scale your page in a faster way",
   "main": "index.js",
   "scripts": {
